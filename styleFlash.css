@@ -1,0 +1,103 @@
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url("./imgFC/mini.jpg");
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    flex-wrap: wrap;
+}
+
+.cards{
+    position: relative;
+    width: 200px;
+    height: 250px;
+    margin: 20px;
+    /* flex-wrap: wrap; */
+
+}
+
+.cards .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.cards .front{
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.cards .front img{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.cards .front h3{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: aqua;
+    background: rgba(0, 0, 0, .4);
+    text-align: center;
+
+}
+/*
+.cards .back {
+    transform: perspective(600px) rotateY(0deg);
+    background-color:rgb(3, 35, 54);
+    padding: 15px;
+    color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+*/
+
+.cards .back{
+    transform: perspective(600px) rotateY(180deg);
+    /* background: rgb(3, 35, 54); */
+    background-image: url("./imgFC/githubfondo.jpg");
+    background-size:cover;
+    padding: 15px;
+    color: rgb(252, 248, 248);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    text-align: center;
+
+}
+.cards .back h3{
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: rgb(170, 54, 180);
+}
+
+.cards .back p{
+    letter-spacing: 1px;
+    font-family: calibri;
+  
+}
+
+.cards:hover .front{
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.cards:hover .back{
+    transform: perspective(600px) rotateY(360deg);
+}
+
